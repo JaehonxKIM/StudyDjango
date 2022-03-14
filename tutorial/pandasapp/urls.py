@@ -15,15 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from firstapp import views
+from . import views
 
 
 urlpatterns = [
-    path('pandas/', include('pandasapp.urls')),
-    path('second/', include('secondapp.urls')),
-    path('admin/', admin.site.urls),
-    path('index1/', views.index1),
-    path('index2/', views.index2),
-    path('first/', include('firstapp.urls')),
-    path('home/', views.home),
+    path('melon_df/', views.melon_df),
+    path('melon/', views.melon),
 ]

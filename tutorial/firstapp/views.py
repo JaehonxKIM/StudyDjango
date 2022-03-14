@@ -36,3 +36,18 @@ def show(request) :
         result += c.name + '<br>'
     return HttpResponse(result)
 
+# html 페이지에 조회결과 출력하기
+def show2(request) :
+    curriculum = Curriculum.objects.all()
+    
+    return render(
+        request, 'firstapp/show.html', {'data' : curriculum}
+    )
+    
+# html 페이지에 테이블 형태로 그려보기
+def show3(request) :
+    curriculum = Curriculum.objects.all()
+    
+    return render(
+        request, 'firstapp/show2.html', {'table' : curriculum}
+    )    
